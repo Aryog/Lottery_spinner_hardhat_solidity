@@ -138,7 +138,7 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
                       await accountConnectedLottery.enterLottery({ value: lotteryEntranceFee })
                   }
                   // total of four players connected to lottery
-                  const startingTimeStamp = await lottery.getLastTimeStamp()
+                  const startingTimeStamp = await lottery.getLatestTimeStamp()
 
                   // performUpkeep (mock being chainlink keepers)
                   // fulfillRandomWords (mock being the Chainlink VRF)
@@ -149,7 +149,7 @@ const { developmentChains, networkConfig } = require("../../helper-hardhat-confi
                               const recentWinner = await lottery.getRecentWinner()
                               console.log(recentWinner)
                               const lotteryState = await lottery.getLotteryState()
-                              const endingTimeStamp = await lottery.getLastTimeStamp()
+                              const endingTimeStamp = await lottery.getLatestTimeStamp()
                               const winnerEndingBalance = await accounts[1].getBalance()
                               console.log(winnerEndingBalance)
                               await expect(lottery.getPlayer(0)).to.be.reverted
