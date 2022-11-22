@@ -1,0 +1,15 @@
+node_modules
+artifacts
+cache
+coverage*
+gasReporterOutput.json
+package.json
+yarn.lock
+package-lock.json
+img
+.env
+.*
+README.md
+coverage.json
+deployments
+.next
